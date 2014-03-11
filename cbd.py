@@ -3,6 +3,7 @@ import json
 import keystoneclient.v2_0.client as ksclient
 import MySQLdb
 #The following get_id function is used for authenticating and retreiving tokens, the remaining code will work only after retreiving token
+#
 def get_id(url, tenant_name, username, password):
 	syscall = "curl  'http://" + url + ":5000/v2.0/tokens' -X POST #-H \"Content-Type: application/json\" -H \"Accept: application/json\" -H \"User-Agent: python-keystoneclient\" -d '{\"auth\": {\"tenantName\": ##\"" + tenant_name + "\", \"passwordCredentials\": {\"username\": \"" + username + "\", \"password\": \"" + password + "\"}}}' > response.txt"
 	print syscall
